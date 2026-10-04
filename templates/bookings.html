@@ -1,0 +1,7 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Explore</title><link rel="stylesheet" href="/static/css/style.css"></head><body><header id="nav"></header><main><h1>My Trips</h1><div id="list"></div></main>
+<dialog id="dlg"><form id="edit" class="panel"><h2>Edit booking</h2>
+<label>Travel date<input type="date" name="travel_date" required></label>
+<label>Travelers<input type="number" name="travelers" min="1" max="20" required></label>
+<p class="error" id="emsg"></p><div class="row"><button class="btn">Save</button>
+<button type="button" class="btn ghost" onclick="dlg.close()">Close</button></div></form></dialog>
+<script src="/static/js/api.js"></script><script src="/static/js/bookings.js"></script></body></html>

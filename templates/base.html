@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Wayfar{% endblock %} | Wayfar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Karla:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.css" integrity="sha512-x9WwyMYBnlXMNQ6kQ/Lyzu1NqIhLQKL5Oq6xByfXuRj7s9CskyCbLv/1IjqzJmXwFXWr0ov6jBV7Qbc0hh9nHg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  {% block nav %}
+  
+<header class="nav">
+
+    <nav class="navbar">
+
+        <a href="#" class="logo">
+            Travel<span>ia</span>
+        </a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Home</a></li>
+            <li><a href="/home" data-nav="home">Countries</a></li>
+           <li> <a href="/my-trips" data-nav="trips">My trips</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+
+       <div class="nav-user">
+      <span id="nav-name"></span>
+      <button class="btn btn-ghost" id="logout-btn" type="button">Log out</button>
+      </div>
+
+        <button class="menu-btn" id="menuBtn">
+            ☰
+        </button>
+
+    </nav>
+
+</header>
+
+  {% endblock %}
+
+  {% block content %}{% endblock %}
+
+  <div id="toast-root" aria-live="polite"></div>
+  <script src="{{ url_for('static', filename='js/api.js') }}"></script>
+  {% block scripts %}{% endblock %}
+</body>
+</html>
