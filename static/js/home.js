@@ -12,6 +12,13 @@ function draw(list) {
 api("/countries").then(d => { all = d; draw(d); });
 
 let searchInput = document.getElementById("search")
+searchInput.addEventListener("input", () =>{
+    if(searchInput.value.trim() === ""){
+        draw(all)
+    }
+})
+
+
 document.querySelector(".search-btn").addEventListener("click", e =>{
     const value =searchInput.value.toLowerCase();
     const result = all.filter(c => c.name.toLowerCase().includes(value));
